@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  FormSampleApp
+
+  Created by aybek can kaya on 12/03/2018.
+  Copyright © 2018 aybek can kaya. All rights reserved.
+*/
+
+"e-posta-adresiniz" = "E-Posta Adresiniz";
+"uye-girisi" = "Üye Girişi";
+"sifreniz-text" = "Şifreniz";
+"uye-girisi-btn-text" = "Giriş";
+"sifremi-unuttum-text" = "Şifremi Unuttum";
+"sifremi-goster-text" = "Şifremi Göster";
+"hemen-uye-ol-btn-text" = "Hemen Üye Ol";
