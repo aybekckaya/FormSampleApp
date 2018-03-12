@@ -19,6 +19,9 @@ class LoginVC: UICollectionViewController   {
         
         setUpUI()
         setUpFormFields()
+        self.flowLayout.minimumInteritemSpacing = 0
+        self.flowLayout.minimumLineSpacing = 0
+        self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 0, 8, 0)
     }
 
     private func setUpUI() {
@@ -34,6 +37,9 @@ class LoginVC: UICollectionViewController   {
             self.collectionView?.register(field.nib, forCellWithReuseIdentifier: field.cellIdentifier)
         }
         self.collectionView?.reloadData()
+        if let layout = self.flowLayout {
+            layout.estimatedItemSize = CGSize(width: 1, height: 1)
+        }
     }
     
    
@@ -56,16 +62,7 @@ class LoginVC: UICollectionViewController   {
         return arrFormFields.count
     }
 
-    func collectionView(collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAtIndexPath indexPath:  NSIndexPath) -> CGSize {
-        
-        return CGSize(width: 120, height:120)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(20, 20, 20, 20)
-    }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let field:FormField = arrFormFields[indexPath.row]
@@ -78,8 +75,6 @@ class LoginVC: UICollectionViewController   {
         }
     }
 
-    
-    
     
     private func emailField(field:FormField , indexPath:IndexPath)->TextfieldFormCell {
         let cell:TextfieldFormCell = collectionView?.dequeueReusableCell(withReuseIdentifier: field.cellIdentifier, for: indexPath) as! TextfieldFormCell
