@@ -8,11 +8,15 @@
 
 import UIKit
 
+typealias FormFieldInput = (text:String , success:Bool)
+
 class LoginVC: UICollectionViewController   {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    fileprivate var arrFormFields:[FormField] = [FormField.email , FormField.password ]
+    fileprivate var arrFormFields:[FormField] = [FormField.email , FormField.password , FormField.sifremiUnuttum , FormField.uyeGirisiBtn , FormField.hemenUyeOl ]
+    fileprivate var dctFormFields:[String:FormFieldInput] = [:]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,8 @@ class LoginVC: UICollectionViewController   {
     private func setUpFormFields() {
         for index in 0..<arrFormFields.count {
             let field:FormField = arrFormFields[index]
+            let formInput:FormFieldInput = (text:"" , success:false)
+            dctFormFields[field.identifier] = formInput
             self.collectionView?.register(field.nib, forCellWithReuseIdentifier: field.cellIdentifier)
         }
         self.collectionView?.reloadData()
@@ -57,13 +63,10 @@ class LoginVC: UICollectionViewController   {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrFormFields.count
     }
 
-    
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let field:FormField = arrFormFields[indexPath.row]
         switch field {
@@ -71,23 +74,64 @@ class LoginVC: UICollectionViewController   {
             return emailField(field: field, indexPath: indexPath)
         case .password:
             return passwordField(field: field, indexPath: indexPath)
-        default : return UICollectionViewCell()
+        case .sifremiUnuttum:
+            return sifremiUnuttumField(field: field, indexPath: indexPath)
+        case .hemenUyeOl , .uyeGirisiBtn:
+            return buttonFormCell(field: field, indexPath: indexPath)
         }
     }
 
     
+    private func buttonFormCell(field:FormField , indexPath:IndexPath)->ButtonFormCell {
+        let cell:ButtonFormCell = collectionView?.dequeueReusableCell(withReuseIdentifier: field.cellIdentifier, for: indexPath) as! ButtonFormCell
+        cell.updateWith(field: field)
+        cell.delegateCell = self
+        return cell
+    }
+    
     private func emailField(field:FormField , indexPath:IndexPath)->TextfieldFormCell {
         let cell:TextfieldFormCell = collectionView?.dequeueReusableCell(withReuseIdentifier: field.cellIdentifier, for: indexPath) as! TextfieldFormCell
-        cell.backgroundColor = UIColor.red
+        cell.updateFromField(field: field, inputText: "")
+        cell.delegateCell = self
         return cell
     }
     
     private func passwordField(field:FormField , indexPath:IndexPath)->TextfieldFormCell {
         let cell:TextfieldFormCell = collectionView?.dequeueReusableCell(withReuseIdentifier: field.cellIdentifier, for: indexPath) as! TextfieldFormCell
+       cell.updateFromField(field: field, inputText: "")
+        cell.delegateCell = self
         return cell
     }
     
+    private func sifremiUnuttumField(field:FormField , indexPath:IndexPath)->TextButtonFormCell {
+        let cell:TextButtonFormCell = collectionView?.dequeueReusableCell(withReuseIdentifier: field.cellIdentifier, for: indexPath) as! TextButtonFormCell
+        cell.updateWith(field: field)
+        cell.delegateCell = self
+        return cell
+    }
+}
+
+
+extension LoginVC: TextButtonFormCellDelegate, ButtonFormCellDelegate , TextfieldFormCellDelegate {
+    func textButtonFormCellOnTap(field: FormField) {
+        
+    }
     
+    func buttonFormCellOnTap(field: FormField) {
+        if field == .uyeGirisiBtn {
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldDidChanged(field: FormField, currentText: String) {
+        
+    }
+    
+    func textFieldDidChangedValidation(field: FormField, currentText: String, validation: Bool) {
+        dctFormFields[field.identifier] = (text:currentText , success:validation)
+    }
     
     
 }
+
+

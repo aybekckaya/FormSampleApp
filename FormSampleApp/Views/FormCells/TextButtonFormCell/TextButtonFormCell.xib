@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Effra_Std_Rg.ttf">
+            <string>Effra-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,10 +25,36 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBe-1X-QwN">
                         <rect key="frame" x="0.0" y="0.0" width="371" height="76"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şifremi Unuttum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptc-g4-q9b">
+                                <rect key="frame" x="8" y="19.5" width="86.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="npY-ht-mma"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Effra-Regular" family="Effra" pointSize="12"/>
+                                <color key="textColor" red="0.38431372549999998" green="0.31764705879999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-jn-9pK">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="wWp-BI-oN6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnActionOnTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yfR-ay-Krz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qs4-jn-9pK" firstAttribute="top" secondItem="tBe-1X-QwN" secondAttribute="top" id="4dH-ur-D25"/>
                             <constraint firstAttribute="height" constant="76" id="5AJ-bz-bH3"/>
+                            <constraint firstItem="Qs4-jn-9pK" firstAttribute="leading" secondItem="tBe-1X-QwN" secondAttribute="leading" id="Ec6-q8-koF"/>
+                            <constraint firstAttribute="bottom" secondItem="Qs4-jn-9pK" secondAttribute="bottom" id="U0b-0F-guF"/>
+                            <constraint firstItem="Ptc-g4-q9b" firstAttribute="centerY" secondItem="tBe-1X-QwN" secondAttribute="centerY" constant="-8" id="fVT-jc-a6K"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ptc-g4-q9b" secondAttribute="trailing" constant="8" id="fgX-5g-ztq"/>
                             <constraint firstAttribute="width" constant="371" id="nk7-Ra-5Kw"/>
+                            <constraint firstItem="Ptc-g4-q9b" firstAttribute="leading" secondItem="tBe-1X-QwN" secondAttribute="leading" constant="8" id="zNf-8l-AFb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -36,6 +67,13 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="371" height="76"/>
+            <connections>
+                <outlet property="btnFormAction" destination="Qs4-jn-9pK" id="A6b-ib-KAk"/>
+                <outlet property="heightConstraintContentView" destination="5AJ-bz-bH3" id="h1W-7K-ExP"/>
+                <outlet property="lblTitle" destination="Ptc-g4-q9b" id="eek-53-t5a"/>
+                <outlet property="widthConstraintContentView" destination="nk7-Ra-5Kw" id="K1n-Bw-HRg"/>
+                <outlet property="widthConstraintFormBtnAction" destination="wWp-BI-oN6" id="mr0-XU-Vgv"/>
+            </connections>
             <point key="canvasLocation" x="26.5" y="-17"/>
         </collectionViewCell>
     </objects>

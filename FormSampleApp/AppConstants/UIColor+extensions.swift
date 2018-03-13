@@ -27,4 +27,11 @@ extension UIColor {
         return UIColor(red:255/255.0, green: 1/255.0, blue: 1/255.0, alpha: 1.0)
     }
     
+    static func textfieldDefaultBorderColor()->UIColor {
+          return UIColor(red:200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
+    }
+    
+    static func textfieldErrorBorderColor()->UIColor {
+         return UIColor(red:210/255.0, green: 2/255.0, blue: 2/255.0, alpha: 1.0)
+    }
 }

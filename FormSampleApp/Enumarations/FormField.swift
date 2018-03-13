@@ -21,6 +21,17 @@ enum FormField {
 
 extension FormField {
     
+    var identifier:String {
+        switch self {
+        case .email: return "emailAddressField"
+        case .password: return "passwordField"
+        case .uyeGirisiBtn: return "uyeGirisiField"
+        case .sifremiUnuttum: return "sifremiUnuttumField"
+        case .hemenUyeOl: return "hemenUyeOlField"
+        }
+    }
+    
+    
     var nib:UINib {
         switch self {
         case .email , .password: return UINib(nibName: TextfieldFormCell.className, bundle: nil)
