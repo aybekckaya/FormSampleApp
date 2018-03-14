@@ -49,6 +49,12 @@
 		A3925E092057018E000B16AC /* ButtonFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3925E052057018E000B16AC /* ButtonFormCell.xib */; };
 		A3925E0A2057018E000B16AC /* ButtonFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3925E052057018E000B16AC /* ButtonFormCell.xib */; };
 		A3925E0B2057018E000B16AC /* ButtonFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3925E052057018E000B16AC /* ButtonFormCell.xib */; };
+		A3CCCA78205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA77205991F600F3CBB8 /* UIViewController+extensions.swift */; };
+		A3CCCA79205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA77205991F600F3CBB8 /* UIViewController+extensions.swift */; };
+		A3CCCA7A205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA77205991F600F3CBB8 /* UIViewController+extensions.swift */; };
+		A3CCCA7C2059979E00F3CBB8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA7B2059979E00F3CBB8 /* Constants.swift */; };
+		A3CCCA7D2059979E00F3CBB8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA7B2059979E00F3CBB8 /* Constants.swift */; };
+		A3CCCA7E2059979E00F3CBB8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CCCA7B2059979E00F3CBB8 /* Constants.swift */; };
 		A3FD78DB205571370083E5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD78DA205571370083E5E4 /* AppDelegate.swift */; };
 		A3FD78E3205571370083E5E4 /* FormSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3FD78E1205571370083E5E4 /* FormSampleApp.xcdatamodeld */; };
 		A3FD78E5205571370083E5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FD78E4205571370083E5E4 /* Assets.xcassets */; };
@@ -101,6 +107,8 @@
 		A3925DFD2057017E000B16AC /* TextButtonFormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextButtonFormCell.xib; sourceTree = "<group>"; };
 		A3925E042057018E000B16AC /* ButtonFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormCell.swift; sourceTree = "<group>"; };
 		A3925E052057018E000B16AC /* ButtonFormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonFormCell.xib; sourceTree = "<group>"; };
+		A3CCCA77205991F600F3CBB8 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		A3CCCA7B2059979E00F3CBB8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3FD78D7205571370083E5E4 /* FormSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FD78DA205571370083E5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FD78E2205571370083E5E4 /* FormSampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FormSampleApp.xcdatamodel; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 			children = (
 				A3925DB42056EBBE000B16AC /* UIColor+extensions.swift */,
 				A3925DB82056EBCC000B16AC /* UIFont+extensions.swift */,
+				A3CCCA7B2059979E00F3CBB8 /* Constants.swift */,
 			);
 			path = AppConstants;
 			sourceTree = "<group>";
@@ -156,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				A3925DCF2056F36B000B16AC /* Strings+extensions.swift */,
+				A3CCCA77205991F600F3CBB8 /* UIViewController+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,8 +461,10 @@
 				A3FD78E3205571370083E5E4 /* FormSampleApp.xcdatamodeld in Sources */,
 				A3925DFE2057017E000B16AC /* TextButtonFormCell.swift in Sources */,
 				A3925DEC2056F8D7000B16AC /* FormField.swift in Sources */,
+				A3CCCA78205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */,
 				A3925DB52056EBBE000B16AC /* UIColor+extensions.swift in Sources */,
 				A3925DD02056F36B000B16AC /* Strings+extensions.swift in Sources */,
+				A3CCCA7C2059979E00F3CBB8 /* Constants.swift in Sources */,
 				A3FD78DB205571370083E5E4 /* AppDelegate.swift in Sources */,
 				A3925DF420570141000B16AC /* TextfieldFormCell.swift in Sources */,
 				A3925DB92056EBCC000B16AC /* UIFont+extensions.swift in Sources */,
@@ -466,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3925DED2056F8D7000B16AC /* FormField.swift in Sources */,
+				A3CCCA79205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */,
 				A3FD7917205572A20083E5E4 /* UIViewControllerProtocol.swift in Sources */,
 				A3FD790F2055722A0083E5E4 /* LoginVC.swift in Sources */,
 				A3925E072057018E000B16AC /* ButtonFormCell.swift in Sources */,
@@ -475,6 +488,7 @@
 				A3925DB62056EBBE000B16AC /* UIColor+extensions.swift in Sources */,
 				A3925DFF2057017E000B16AC /* TextButtonFormCell.swift in Sources */,
 				A3925DF520570141000B16AC /* TextfieldFormCell.swift in Sources */,
+				A3CCCA7D2059979E00F3CBB8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3925DEE2056F8D7000B16AC /* FormField.swift in Sources */,
+				A3CCCA7A205991F600F3CBB8 /* UIViewController+extensions.swift in Sources */,
 				A3FD7918205572A20083E5E4 /* UIViewControllerProtocol.swift in Sources */,
 				A3FD79102055722A0083E5E4 /* LoginVC.swift in Sources */,
 				A3925E082057018E000B16AC /* ButtonFormCell.swift in Sources */,
@@ -492,6 +507,7 @@
 				A3925DB72056EBBE000B16AC /* UIColor+extensions.swift in Sources */,
 				A3925E002057017E000B16AC /* TextButtonFormCell.swift in Sources */,
 				A3925DF620570141000B16AC /* TextfieldFormCell.swift in Sources */,
+				A3CCCA7E2059979E00F3CBB8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,3 +13,13 @@
 "sifremi-unuttum-text" = "Şifremi Unuttum";
 "sifremi-goster-text" = "Şifremi Göster";
 "hemen-uye-ol-btn-text" = "Hemen Üye Ol";
+
+"Email_Or_Password_Not_Correct" = "Email veya şifrenizi kontrol ederek tekrar deneyiniz.";
+"Login_Success" = "Giriş Başarılı";
+"Login_Failed" = "Giriş Başarısız";
+"OK" = "Tamam";
+"Congragulations" = "Tebrikler";
+"Please_Enter_Correct_Email" = "Hatalı bir e-posta girdiniz";
+"Please_Enter_Correct_Password" = "Hatalı bir şifre girdiniz";
+
+

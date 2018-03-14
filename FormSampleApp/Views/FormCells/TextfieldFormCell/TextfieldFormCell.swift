@@ -74,23 +74,14 @@ class TextfieldFormCell: UICollectionViewCell, UITextFieldDelegate {
     private func validate()->Bool {
         guard let field = currentField , let text = self.tfInput.text, !text.isEmpty  else { return false }
         if field == .email {
-            return emailValidation(text: text)
+            return text.emailValidation()
         }
         else if field == .password {
-            return passwordValidation(text: text)
+            return text.passwordValidation()
         }
-        
         return false
     }
     
-    private func emailValidation(text:String)->Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: text)
-    }
-    
-    private func passwordValidation(text:String)->Bool {
-        return text.count > 3
-    }
+   
     
 }

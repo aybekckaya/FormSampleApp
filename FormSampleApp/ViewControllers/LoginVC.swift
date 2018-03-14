@@ -120,8 +120,59 @@ extension LoginVC: TextButtonFormCellDelegate, ButtonFormCellDelegate , Textfiel
     func buttonFormCellOnTap(field: FormField) {
         if field == .uyeGirisiBtn {
             self.view.endEditing(true)
+            guard validateFields() == true else { return }
+            // if login successfull
         }
     }
+    
+    private func validateFields()->Bool {
+        let fieldInvalid = dctFormFields.first(where: { (key , value) -> Bool in
+            if key == FormField.email.identifier || key == FormField.password.identifier {
+                 return !value.success
+            }
+            return false
+        })
+        
+        guard let invalidField = fieldInvalid else {
+            
+            if !(dctFormFields[FormField.email.identifier]?.text == Constants.emailForTest || dctFormFields[FormField.password.identifier]?.text == Constants.emailForTest) {
+                self.showAlertView(alertMessage: "Email_Or_Password_Not_Correct".localize()  , alertTitle: "Login_Failed".localize(), alertStyle: .alert, cancelButtonTitle: "OK".localize(), otherButtonTitles: [], cancelBlock: {
+                    
+                }, tapBlock: { _ in
+                    
+                })
+                return false
+            }
+            
+            self.showAlertView(alertMessage: "Congragulations".localize()  , alertTitle: "Login_Success".localize(), alertStyle: .alert, cancelButtonTitle: "OK".localize(), otherButtonTitles: [], cancelBlock: {
+                
+            }, tapBlock: { _ in
+                
+            })
+            return true
+        }
+        
+        var message:String = ""
+        if invalidField.key == FormField.email.identifier {
+            message = "Please_Enter_Correct_Email".localize()
+            
+        }
+        else if invalidField.key == FormField.password.identifier {
+            message = "Please_Enter_Correct_Password".localize()
+           
+        }
+        
+    
+        self.showAlertView(alertMessage:message , alertTitle: "Login_Failed".localize(), alertStyle: .alert, cancelButtonTitle: "OK".localize(), otherButtonTitles: [], cancelBlock: {
+            
+        }, tapBlock: { _ in
+            
+        })
+         return false
+    }
+    
+    
+    
     
     func textFieldDidChanged(field: FormField, currentText: String) {
         
@@ -131,7 +182,9 @@ extension LoginVC: TextButtonFormCellDelegate, ButtonFormCellDelegate , Textfiel
         dctFormFields[field.identifier] = (text:currentText , success:validation)
     }
     
-    
 }
+
+
+
 
 
